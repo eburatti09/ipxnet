@@ -1,7 +1,7 @@
 CC=g++
 TARGET=ipxnet
 SRCFILES=main.cpp ipxserver.cpp
-LIBS=-lSDL_net
+LIBS=-lSDL -lSDL_net -lpthread
 
 all: $(TARGET)
 
@@ -9,4 +9,4 @@ $(TARGET): $(SRCFILES)
 	$(CC) -Wall $(CXXFLAGS) $(SRCFILES) $(LIBS) -o $(TARGET)
 
 clean:
-	rm -f $(TARGET) ipxnet.log
+	rm -f $(TARGET)
